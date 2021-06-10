@@ -124,9 +124,6 @@ async function viewEmployeesByDepartment() {
   const departmentChoices = departments.map(({ id, name }) => ({
     name: name,
     value: id
-    // CREATE TWO PROPERTIES name AND value FOR THIS OBJECT. THE PROPERTY name SHOULD CONTAIN THE NAME OF THE DEPARTMENT.
-    // THE PROPERTY value SHOULD CONTAIN id.
-    // THIS OBJECT FOR EACH MANAGER WILL RETURN TO MAP() TO CONSTRUCT AN ARRAY TO BE RETURNED AND BE STORED TO managerChoices.
   }));
 
   const { departmentId } = await prompt([
@@ -152,9 +149,6 @@ async function updateEmployeeRole() {
   const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
     name: first_name + last_name,
     value: id
-    // CREATE TWO PROPERTIES name AND value FOR THIS OBJECT. THE PROPERTY name SHOULD CONTAIN THE CONCATENATION OF THE FIRST HAME AND THE LAST NAME.
-    // THE PROPERTY value SHOULD CONTAIN id.
-    // THIS OBJECT FOR EACH MANAGER WILL RETURN TO MAP() TO CONSTRUCT AN ARRAY TO BE RETURNED AND BE STORED TO managerChoices.
   }));
 
   const { employeeId } = await prompt([
@@ -286,10 +280,6 @@ async function addEmployee() {
   const managerChoices = employees.map(({ id, first_name, last_name }) => ({
     name: first_name + last_name,
     value: id
-    // CREATE TWO PROPERTIES name AND value FOR THIS OBJECT. THE PROPERTY name SHOULD CONTAIN THE CONCATENATION OF THE FIRST HAME AND THE LAST NAME.
-    // THE PROPERTY value SHOULD CONTAIN id.
-    // THIS OBJECT FOR EACH MANAGER WILL RETURN TO MAP() TO CONSTRUCT AN ARRAY TO BE RETURNED AND BE STORED TO managerChoices.   
-
   }));
   managerChoices.unshift({ name: "None", value: null });
 

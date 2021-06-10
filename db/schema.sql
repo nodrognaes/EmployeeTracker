@@ -5,7 +5,7 @@ USE employees;
 
 CREATE TABLE department (
   -- CREATE id, name COLUMNS
-  id INT NOT NULL,
+  id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(25) NOT NULL,
   -- MAKE id AS PRIMARY KEY
   PRIMARY KEY (id)
@@ -13,7 +13,7 @@ CREATE TABLE department (
 
 CREATE TABLE role (
   -- CREATE id AS INTERGER, title AS VARCHAR, salary AS DECIMAL, deplartment_id AS INTEGER
-  id INT NOT NULL,
+  id INT NOT NULL AUTO_INCREMENT,
   title VARCHAR(30) NULL,
   salary DECIMAL NULL,
   department_id INT NULL,
@@ -21,14 +21,14 @@ CREATE TABLE role (
   PRIMARY KEY (id),
   -- MAKE department_id AS FOREIGN KEY (google) REFERENCING department TABLE AND
   FOREIGN KEY (department_id) 
-    REFERENCES department(department_id)
+    REFERENCES department(id)
     ON DELETE CASCADE
   -- MAKE CONSTRAINT 'ON DELETE CASCADE' (WITHOUT QUOTES) ON THIS FOREIGN KEY
 );
 
 CREATE TABLE employee (
   -- CREATE COLUMNS: id AS INT, first_name AS VARCHAR, last_name AS VARCHAR, role_id AS INTEGER, AND manager_id AS INT.
-   id INT NOT NULL,
+   id INT NOT NULL AUTO_INCREMENT,
    first_name VARCHAR(20) NULL,
    las_name VARCHAR(20) NULL,
    role_id INT NULL,
@@ -41,6 +41,6 @@ CREATE TABLE employee (
     ON DELETE CASCADE,
   -- MAKE manager_id AS FOREIGN KEY REFERENCING employee TABLE ITSELF AND MAKE CONSTRAINT ON DELETE SET NULL ON THIS FOREIGN KEY
   FOREIGN KEY (manager_id)
-    REFERENCES employee(manager_id)
+    REFERENCES employee(id)
     ON DELETE SET NULL
 );
