@@ -9,7 +9,7 @@ class DB {
   // Find all employees, join with roles and departments to display their roles, salaries, departments, and managers
   findAllEmployees() {
     return this.connection.query(
-      // CREATE SELECT STATMENT WITH THE FOLLOWING COLUMNS FROM THREE TABLES.
+      "SELECT employee.id, employee.first_name, employee.last_name FROM employee AND department.name FROM department AND role.salary FROM role LEFT JOIN role on employee.role_id = role.id LEFT JOIN department on role.department_id = department.id"
       // id, first_name, last_name FROM employee TABLE AND department name from department TABLE AND SELECT salary FROM role TABLE
       // YOUR NEED TO USE LEFT JOINS TO JOIN THREE TABLES
       // YOUR CODE HERE
@@ -33,7 +33,8 @@ class DB {
   // Update the given employee's role
   updateEmployeeRole(employeeId, roleId) {
     return this.connection.query(
-      // YOUR CODE HERE
+      "UPDATE employee SET role = ? WHERE id = ?",
+      [employeeId, roleId]
     );
   }
 
@@ -48,6 +49,7 @@ class DB {
   // Find all roles, join with departments to display the department name
   findAllRoles() {
     return this.connection.query(
+      "SELECT role.id, role.title, role.salary FROM role LEFT JOIN LEFT JOIN department on role.department_id = department.id"
       // SELECT THE FOLLOWING COLUMNS:
       // id, title, salary FROM role TABLE AND department name FROM department TABLE
       // YOU NEED TO USE LEFT JOIN TO JOIN role and department TABLES
@@ -57,9 +59,7 @@ class DB {
 
   // Create a new role
   createRole(role) {
-    return this.connection.query(
-      // YOUR CODE HERE
-      );
+    return this.connection.query("INSERT INTO role SET ?", role);
   }
 
 
@@ -72,9 +72,7 @@ class DB {
 
   // Create a new department
   createDepartment(department) {
-    return this.connection.query(
-      // YOUR CODE HERE
-    );
+    return this.connection.query("INSERT INTO department SET ?", department);
   }
 
   // Find all employees in a given department, join with roles to display role titles
