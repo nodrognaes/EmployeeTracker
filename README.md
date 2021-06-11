@@ -6,6 +6,14 @@ This is an application that a company may use to manage employees, roles, and de
 
 ## How to use:
 
-To run the application, in command line, the user will 
+To run the application, in command line, the user may enter 
+
+By using the arrow keys and following the prompts, the user will then be able to:
+
+* Add departments, roles, employees
+
+* View departments, roles, employees
+
+* Update employee roles
 
 ## Demo:
