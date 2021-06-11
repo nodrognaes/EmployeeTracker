@@ -27,3 +27,5 @@ By using the arrow keys and following the prompts, the user will then be able to
 * Update employee roles
 
 ## Demo:
+
+![emptrackergif](https://user-images.githubusercontent.com/48900910/121622511-2145c080-ca3c-11eb-88db-281b14159f75.gif)
