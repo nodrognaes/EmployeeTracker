@@ -9,10 +9,7 @@ class DB {
   // Find all employees, join with roles and departments to display their roles, salaries, departments, and managers
   findAllEmployees() {
     return this.connection.query(
-      "SELECT employee.id, employee.first_name, employee.last_name FROM employee AND department.name FROM department AND role.salary FROM role LEFT JOIN role on employee.role_id = role.id LEFT JOIN department on role.department_id = department.id"
-      // id, first_name, last_name FROM employee TABLE AND department name from department TABLE AND SELECT salary FROM role TABLE
-      // YOUR NEED TO USE LEFT JOINS TO JOIN THREE TABLES
-      // YOUR CODE HERE
+      "SELECT employee.id, employee.first_name, employee.last_name, department.name, role.salary FROM employee LEFT JOIN role on employee.role_id = role.id LEFT JOIN department on role.department_id = department.id"
     );
   }
 
@@ -49,11 +46,7 @@ class DB {
   // Find all roles, join with departments to display the department name
   findAllRoles() {
     return this.connection.query(
-      "SELECT role.id, role.title, role.salary FROM role LEFT JOIN LEFT JOIN department on role.department_id = department.id"
-      // SELECT THE FOLLOWING COLUMNS:
-      // id, title, salary FROM role TABLE AND department name FROM department TABLE
-      // YOU NEED TO USE LEFT JOIN TO JOIN role and department TABLES
-      // YOUR CODE HERE
+      "SELECT role.id, role.title, role.salary, department.name FROM role LEFT JOIN role ON employee.role_id = role.id LEFT JOIN department ON role.department_id = department.id"
     );
   }
 
