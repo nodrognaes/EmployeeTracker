@@ -6,10 +6,16 @@ This is an application that a company may use to manage employees, roles, and de
 
 ## How to use:
 
-To run the application, in command line, the user may enter 
+To run the application, in command line, the user may enter either
 
 ```
-node index.html
+node index.js
+```
+
+or
+
+```
+npm start
 ```
 
 By using the arrow keys and following the prompts, the user will then be able to:

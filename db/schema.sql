@@ -30,7 +30,7 @@ CREATE TABLE employee (
   -- CREATE COLUMNS: id AS INT, first_name AS VARCHAR, last_name AS VARCHAR, role_id AS INTEGER, AND manager_id AS INT.
    id INT NOT NULL AUTO_INCREMENT,
    first_name VARCHAR(20) NULL,
-   las_name VARCHAR(20) NULL,
+   last_name VARCHAR(20) NULL,
    role_id INT NULL,
    manager_id INT NULL,
   -- MAKE id As PRIMARY KEY
